@@ -31,10 +31,38 @@ var hourAudit = function (){
         }
     }
 }
+$(".taskBin").on("click", "p", function(){
+    var text =$(this)
+    .text()
+    .trim();
+    var textInput =$("<textarea>")
+    .addClass("form-control")
+    .val(text);
 
+    $(this).replaceWith(textInput);
+    textInput.trigger("focus");
+});
+
+$(".taskBin").on("blur", "textarea", function() {
+    var text = $(this)
+    .val()
+    .trim();
+
+    var taskP = $("<p>")
+    .addClass("taskItem")
+    .text(text);
+
+    $(this).replaceWith(taskP); 
+});
 
 $(".saveBtn").on("click", function() {
     var index = $(".saveBtn").index(this);
     task[index] = $(this).parent().find(",taskItem").text();
     localstore.setItem("tasks", JSON.stringify(tasks));
 });
+
+setInterval(function(){
+    hourAudit();},1000*60*600);
+
+    loadTasks();
+    hourAudit();
