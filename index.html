@@ -29,10 +29,28 @@
       <p id="currentDay" class="lead"></p>
     </header>
     <div class="container">
-      
+      <!-- Timeblocks go here -->
+      <div class="row time-block">
+        <div class = "col-2 hour">8 AM</div>
+        <div class = "col-9 taskBin" id="task-8">
+          <p id= "task-item-0"></p>
+      </div> 
+      <button class="col 1 saveBtn" id="save-btn">
+        <span class="fa fa-archive"></span>
+      </button>
+    </div>
+    <div class ="row time-block">
+      <div class = "col-2 hour">9 AM</div>
+      <div class = "col-9 taskBin" id="task-9">
+        <p id = "task-item-1"></p>
+      </div>
+      <button class="col 1 saveBtn" id="save-btn">
+        <span class="fa fa-archive"></span>
+      </button>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="./javascript.js"></script>
   </body>
 </html>
