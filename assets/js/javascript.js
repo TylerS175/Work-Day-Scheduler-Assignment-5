@@ -85,6 +85,6 @@ $(".taskBin").on("blur", "textarea", function() {
   setInterval(function(){
       hourAudit();},1000*60*60);
 
-  loadTasks();
-  hourAudit();
+  loadTasks()
+  hourAudit()
   
